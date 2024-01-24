@@ -1,3 +1,5 @@
+package Lesson1
+
 import kotlin.math.round
 
 const val SECONDS_PER_MINUTE: Int = 60

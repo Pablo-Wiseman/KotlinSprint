@@ -1,13 +1,17 @@
 import kotlin.math.round
 
-const val SECONDS: Int = 6480
+const val SECONDS_PER_MINUTE: Int = 60
+const val MINUTES_PER_HOUR: Int = 60
+const val HOURS_PER_DAY: Int = 24 //также константа поскольку величина постоянная
 fun main() {
-    val tempSeconds = (SECONDS % (60 * 60 * 24))
-    val secondsLeft = tempSeconds % 60
-    val minutes = round((tempSeconds % (60 * 60)).toDouble() / 60).toInt()
-    val hoursLeft = round((tempSeconds / (60 * 60)).toDouble()).toInt()
 
-    val fullTimeFormat = String.format("%02d:%02d:%02d", hoursLeft, minutes, secondsLeft)
+    val totalSeconds = 6480
+    val tempSeconds = totalSeconds % (SECONDS_PER_MINUTE * MINUTES_PER_HOUR * HOURS_PER_DAY)
+    val secondsLeft = tempSeconds % SECONDS_PER_MINUTE
+    val minutesLeft  = round((tempSeconds % (SECONDS_PER_MINUTE * MINUTES_PER_HOUR)).toDouble() / SECONDS_PER_MINUTE).toInt()
+    val hoursLeft = round((tempSeconds / (SECONDS_PER_MINUTE * MINUTES_PER_HOUR)).toDouble()).toInt()
+
+    val fullTimeFormat = String.format("%02d:%02d:%02d", hoursLeft, minutesLeft, secondsLeft)
 
 
     print(fullTimeFormat)

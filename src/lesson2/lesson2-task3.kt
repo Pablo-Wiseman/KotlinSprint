@@ -10,6 +10,6 @@ fun main() {
     val duration: Duration = 457.minutes
     val arrival = departure + duration
 
-    println("Train arrives at $arrival")
+    println("the train arrives at $arrival")
 
 }

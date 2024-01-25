@@ -5,16 +5,17 @@ fun main() {
     val crystalOre = 7
     val ironOre = 11
 
-    val increaseIronOre = increase(ironOre)
-    val increaseCrystalOre = increase(crystalOre)
+    val ironOreBuff = increase(ironOre)
+    val crystalOreBuff = increase(crystalOre)
 
-    println("ironOre + 20% buff: $increaseIronOre")
-    println("crystalOre + 20% buff: $increaseCrystalOre")
+    println("+ $ironOreBuff to iron ore mined")
+    println("+ $crystalOreBuff to crystal ore mined")
 
 }
 
 fun increase(resourceCount: Int, percent: Int = 20): Int {
     val result = resourceCount * percent / 100
-    return result + resourceCount
+    val totalWithBuff = result + resourceCount
+    return totalWithBuff - resourceCount
 
 }

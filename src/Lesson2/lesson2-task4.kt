@@ -18,5 +18,4 @@ fun getResourceCount(resourceItems: Int, percent: Int): Int {
     val result = resourceItems * percent / 100
     val totalWithBuff = result + resourceItems
     return totalWithBuff - resourceItems
-
 }

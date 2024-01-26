@@ -4,16 +4,17 @@ fun main() {
 
     val crystalOre = 7
     val ironOre = 11
+    val percent = 20
 
-    val ironOreBuff = resourceBuffCount(ironOre)
-    val crystalOreBuff = resourceBuffCount(crystalOre)
+    val ironOreBuff = getResourceCount(ironOre, percent)
+    val crystalOreBuff = getResourceCount(crystalOre, percent)
 
     println("+ $ironOreBuff items to iron ore mined")
     println("+ $crystalOreBuff items to crystal ore mined")
 
 }
 
-fun resourceBuffCount(resourceItems: Int, percent: Int = 20): Int {
+fun getResourceCount(resourceItems: Int, percent: Int): Int {
     val result = resourceItems * percent / 100
     val totalWithBuff = result + resourceItems
     return totalWithBuff - resourceItems
